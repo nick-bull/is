@@ -23,10 +23,10 @@ const aliasImports = fetchPackageImportsAsAliasMap();
 
 export default {
   'presets': [
-    ['@babel/preset-env'],
+    ['@babel/preset-env', {targets: {node: 'current'}}],
   ],
   'plugins': [
-    ['@babel/plugin-transform-runtime', {'regenerator': true}],
-    ['module-resolver', {'alias': aliasImports}],
+    ['@babel/plugin-transform-runtime', {regenerator: true}],
+    ['module-resolver', {alias: aliasImports}],
   ],
 };
